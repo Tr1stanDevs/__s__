@@ -1,17 +1,17 @@
-global main
+global _start
 section .text
-main:
+_start:
     mov rax, 1
     mov rdi, 1
-    mov rsi, "hi"
-    mov rdx, 4
+    mov rsi, x
+    mov rdx, 7
 
     syscall
 
-    mov rax, 0x60
+    mov rax, 0x3c
     xor rdi, rdi
     syscall
 
 
 section .data
-x: db "hello", 0
+x: db "hello", 0, 0x0a
