@@ -1,8 +1,8 @@
 DEFAULT REL ;relative addressing
 
-global _start
+global main
 section .text
-_start:
+main:
     mov rax, 1
     mov rdi, 1
     lea rsi, [start_print]
