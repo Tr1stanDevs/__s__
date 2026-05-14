@@ -1,0 +1,52 @@
+
+./main:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <main>:
+  401000:	b8 01 00 00 00       	mov    eax,0x1
+  401005:	bf 01 00 00 00       	mov    edi,0x1
+  40100a:	48 8d 35 ef 0f 00 00 	lea    rsi,[rip+0xfef]        # 402000 <start_print>
+  401011:	ba 10 00 00 00       	mov    edx,0x10
+  401016:	0f 05                	syscall
+  401018:	c6 05 fd 0f 00 00 68 	mov    BYTE PTR [rip+0xffd],0x68        # 40201c <__bss_start>
+  40101f:	c6 05 f7 0f 00 00 69 	mov    BYTE PTR [rip+0xff7],0x69        # 40201d <__bss_start+0x1>
+  401026:	c6 05 f1 0f 00 00 0a 	mov    BYTE PTR [rip+0xff1],0xa        # 40201e <__bss_start+0x2>
+  40102d:	c6 05 eb 0f 00 00 00 	mov    BYTE PTR [rip+0xfeb],0x0        # 40201f <__bss_start+0x3>
+  401034:	b8 01 00 00 00       	mov    eax,0x1
+  401039:	bf 01 00 00 00       	mov    edi,0x1
+  40103e:	48 8d 35 d7 0f 00 00 	lea    rsi,[rip+0xfd7]        # 40201c <__bss_start>
+  401045:	ba 0a 00 00 00       	mov    edx,0xa
+  40104a:	0f 05                	syscall
+  40104c:	eb 00                	jmp    40104e <exit_function>
+
+000000000040104e <exit_function>:
+  40104e:	b8 01 00 00 00       	mov    eax,0x1
+  401053:	bf 01 00 00 00       	mov    edi,0x1
+  401058:	48 be 10 20 40 00 00 	movabs rsi,0x402010
+  40105f:	00 00 00 
+  401062:	ba 0a 00 00 00       	mov    edx,0xa
+  401067:	0f 05                	syscall
+  401069:	b8 3c 00 00 00       	mov    eax,0x3c
+  40106e:	48 31 ff             	xor    rdi,rdi
+  401071:	0f 05                	syscall
+
+Disassembly of section .data:
+
+0000000000402000 <start_print>:
+  402000:	70 72                	jo     402074 <_end+0x14>
+  402002:	6f                   	outs   dx,DWORD PTR [rsi]
+  402003:	67 72 61             	addr32 jb 402067 <_end+0x7>
+  402006:	6d                   	ins    DWORD PTR [rdi],dx
+  402007:	20 73 74             	and    BYTE PTR [rbx+0x74],dh
+  40200a:	61                   	(bad)
+  40200b:	72 74                	jb     402081 <_end+0x21>
+  40200d:	21 00                	and    DWORD PTR [rax],eax
+  40200f:	0a               	or     ah,BYTE PTR [rsi+0x75]
+
+0000000000402010 <var>:
+  402010:	66 75 6e             	data16 jne 402081 <_end+0x21>
+  402013:	63 74 69 6f          	movsxd esi,DWORD PTR [rcx+rbp*2+0x6f]
+  402017:	6e                   	outs   dx,BYTE PTR [rsi]
+  402018:	00 0a                	add    BYTE PTR [rdx],cl
