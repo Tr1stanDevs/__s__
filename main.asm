@@ -7,6 +7,7 @@ main:
     mov rdi, 1 ; file descriptor 1 for write
     lea rsi, [start_print] ; char*
     mov rdx, sp_len ; length of the string
+    syscall
 
     mov byte [un_init], 'h',
     mov byte [un_init+1], 'i',
@@ -18,7 +19,6 @@ main:
     mov rdi, 1 ; file descriptor 1 for write
     lea rsi, [un_init] ; char*
     mov rdx, 10 ; length of the string
-
     syscall ; invoke
 
     jmp exit_function ; in jmp rbp wont be saved, so there is no going back
