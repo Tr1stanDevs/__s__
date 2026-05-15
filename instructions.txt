@@ -42,11 +42,11 @@ Disassembly of section .data:
   402007:	20 73 74             	and    BYTE PTR [rbx+0x74],dh
   40200a:	61                   	(bad)
   40200b:	72 74                	jb     402081 <_end+0x21>
-  40200d:	21 00                	and    DWORD PTR [rax],eax
-  40200f:	0a               	or     ah,BYTE PTR [rsi+0x75]
+  40200d:	21 0a                	and    DWORD PTR [rdx],ecx
+	...
 
 0000000000402010 <var>:
   402010:	66 75 6e             	data16 jne 402081 <_end+0x21>
   402013:	63 74 69 6f          	movsxd esi,DWORD PTR [rcx+rbp*2+0x6f]
   402017:	6e                   	outs   dx,BYTE PTR [rsi]
-  402018:	00 0a                	add    BYTE PTR [rdx],cl
+  402018:	0a 00                	or     al,BYTE PTR [rax]

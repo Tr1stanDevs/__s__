@@ -42,8 +42,8 @@ un_init: resb 64
 
 
 section .data
-start_print: db "program start!", 0, 0x0a ; 0 is the nullbyte to indicate the end of the string, 0x0a is \n
+start_print: db "program start!", 0xa,  0; 0 is the nullbyte to indicate the end of the string, 0x0a is \n
 sp_len equ $ - start_print
 
-var: db "function", 0, 0xa 
+var: db "function", 0xa,  0
 v_len equ $ - var
