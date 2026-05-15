@@ -37,6 +37,16 @@ exit_function:
     xor rdi, rdi ;set error code to 0
     syscall
 
+;ptr in rbx
+;to append in rax
+string_append_char:
+    push rax ; save char  
+    push rbx ; save ptr
+
+
+
+
+
 section .bss
 un_init: resb 64
 
